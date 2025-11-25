@@ -612,9 +612,9 @@ def create_population_heatmap(pop_data, lat, lon, radius_km):
     fig.update_layout(
         title=dict(
             text='Population Density Map',
-            font=dict(size=18, color='#333'),
-            x=0.5
+            font=dict(size=18, color='#333')
         ),
+        title_x=0.5,
         xaxis_title='Longitude',
         yaxis_title='Latitude',
         height=450,
@@ -654,7 +654,8 @@ def create_heatmap(failure_matrix, num_platforms_vec, num_parkings_vec):
     ))
     
     fig.update_layout(
-        title=dict(text='Failure Rate Analysis', font=dict(size=20, color='#333'), x=0.5),
+        title=dict(text='Failure Rate Analysis', font=dict(size=20, color='#333')),
+        title_x=0.5,
         xaxis=dict(title='Number of Parking Spots', titlefont=dict(size=14), tickfont=dict(size=12)),
         yaxis=dict(title='Number of Landing Platforms', titlefont=dict(size=14), tickfont=dict(size=12)),
         height=500,
@@ -678,7 +679,8 @@ def create_3d_surface(failure_matrix, num_platforms_vec, num_parkings_vec):
     )])
     
     fig.update_layout(
-        title=dict(text='3D Failure Rate Surface', font=dict(size=20, color='#333'), x=0.5),
+        title=dict(text='3D Failure Rate Surface', font=dict(size=20, color='#333')),
+        title_x=0.5,
         scene=dict(
             xaxis_title='Parking Spots',
             yaxis_title='Platforms',
@@ -718,7 +720,8 @@ def create_contour_plot(failure_matrix, num_platforms_vec, num_parkings_vec, tar
     
     fig.update_layout(
         title=dict(text=f'Contour Analysis (Target: {target_rate}% failure rate)', 
-                  font=dict(size=20, color='#333'), x=0.5),
+                  font=dict(size=20, color='#333')),
+        title_x=0.5,
         xaxis_title='Number of Parking Spots',
         yaxis_title='Number of Landing Platforms',
         height=500,
