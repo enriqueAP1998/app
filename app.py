@@ -573,8 +573,7 @@ def create_population_heatmap(pop_data, lat, lon, radius_km):
         y=lat_small,
         colorscale='YlOrRd',
         colorbar=dict(
-            title='Population<br>Density<br>(per km²)',
-            titlefont=dict(size=12)
+            title=dict(text='Population<br>Density<br>(per km²)', font=dict(size=12))
         ),
         hovertemplate='Lon: %{x:.4f}<br>Lat: %{y:.4f}<br>Density: %{z:.0f}/km²<extra></extra>'
     ))
@@ -656,8 +655,8 @@ def create_heatmap(failure_matrix, num_platforms_vec, num_parkings_vec):
     fig.update_layout(
         title=dict(text='Failure Rate Analysis', font=dict(size=20, color='#333')),
         title_x=0.5,
-        xaxis=dict(title='Number of Parking Spots', titlefont=dict(size=14), tickfont=dict(size=12)),
-        yaxis=dict(title='Number of Landing Platforms', titlefont=dict(size=14), tickfont=dict(size=12)),
+        xaxis=dict(title=dict(text='Number of Parking Spots', font=dict(size=14)), tickfont=dict(size=12)),
+        yaxis=dict(title=dict(text='Number of Landing Platforms', font=dict(size=14)), tickfont=dict(size=12)),
         height=500,
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)'
