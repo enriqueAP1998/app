@@ -514,19 +514,9 @@ def population_within_circle(x_coords, y_coords, pop_density, center_x, center_y
 # ========================
 
 def render_header():
-    """Render the main header with university logo."""
-    # Load and encode the logo
-    logo_path = os.path.join(os.path.dirname(__file__), "logo.png")
-    
-    logo_html = ""
-    if os.path.exists(logo_path):
-        with open(logo_path, "rb") as f:
-            logo_data = base64.b64encode(f.read()).decode()
-        logo_html = f'<img src="data:image/png;base64,{logo_data}" style="height: 60px; margin-bottom: 10px;">'
-    
-    st.markdown(f"""
+    """Render the main header."""
+    st.markdown("""
     <div class="main-header">
-        {logo_html}
         <h1>🚁 UAM Vertiport Simulator</h1>
         <p>Advanced Demand/Capacity Simulation for Urban Air Mobility</p>
         <div class="data-badge">📊 Powered by GHS-POP Population Data</div>
@@ -834,11 +824,6 @@ def main():
     
     # Sidebar configuration
     with st.sidebar:
-        # Logo in sidebar
-        logo_path = os.path.join(os.path.dirname(__file__), "logo.png")
-        if os.path.exists(logo_path):
-            st.image(logo_path, use_column_width=True)
-        
         st.markdown("## ⚙️ Configuration")
         st.markdown("---")
         
@@ -1375,20 +1360,11 @@ def main():
     # Footer with author info
     st.markdown("---")
     
-    # Load logo for footer
-    logo_path = os.path.join(os.path.dirname(__file__), "logo.png")
-    footer_logo = ""
-    if os.path.exists(logo_path):
-        with open(logo_path, "rb") as f:
-            logo_data = base64.b64encode(f.read()).decode()
-        footer_logo = f'<img src="data:image/png;base64,{logo_data}" style="height: 40px; vertical-align: middle; margin-right: 15px;">'
-    
-    st.markdown(f"""
+    st.markdown("""
     <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); 
                 padding: 1.5rem; border-radius: 12px; margin-top: 1rem;">
         <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 20px;">
-            {footer_logo}
-            <div style="text-align: left;">
+            <div style="text-align: center;">
                 <p style="margin: 0; font-size: 1rem; color: #333; font-weight: 600;">
                     👨‍💻 Developed by <strong>Enrique Aldao Pensado</strong>
                 </p>
