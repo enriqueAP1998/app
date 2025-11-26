@@ -42,41 +42,7 @@ st.markdown("""
         padding-bottom: 2rem;
     }
     
-    /* GLOBAL TEXT FIX - Ensure all text is dark on light backgrounds */
-    .main .block-container, 
-    .main .block-container p,
-    .main .block-container span,
-    .main .block-container div,
-    .main .block-container label,
-    .stMarkdown,
-    .stMarkdown p,
-    .stMarkdown span,
-    .stText,
-    [data-testid="stMarkdownContainer"],
-    [data-testid="stMarkdownContainer"] p,
-    [data-testid="stMarkdownContainer"] span,
-    [data-testid="stText"] {
-        color: #1a1a2e !important;
-    }
-    
-    /* Tab content area - ensure dark text */
-    .stTabs [data-baseweb="tab-panel"],
-    .stTabs [data-baseweb="tab-panel"] p,
-    .stTabs [data-baseweb="tab-panel"] span,
-    .stTabs [data-baseweb="tab-panel"] div,
-    .stTabs [data-baseweb="tab-panel"] h1,
-    .stTabs [data-baseweb="tab-panel"] h2,
-    .stTabs [data-baseweb="tab-panel"] h3,
-    .stTabs [data-baseweb="tab-panel"] h4 {
-        color: #1a1a2e !important;
-    }
-    
-    /* Headers inside tabs */
-    h1, h2, h3, h4, h5, h6 {
-        color: #1a1a2e !important;
-    }
-    
-    /* Header styling - EXCEPTION: white text on gradient */
+    /* Header styling - white text on gradient */
     .main-header {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         padding: 1.5rem;
@@ -86,21 +52,14 @@ st.markdown("""
         box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
     }
     
-    .main-header h1 {
-        margin: 0;
-        font-size: 2.2rem;
-        font-weight: 700;
+    .main-header h1,
+    .main-header p,
+    .main-header span,
+    .main-header div {
         color: white !important;
     }
     
-    .main-header p {
-        margin: 0.5rem 0 0 0;
-        opacity: 0.95;
-        font-size: 1rem;
-        color: white !important;
-    }
-    
-    /* Data source badge */
+    /* Data source badge - white text */
     .data-badge {
         background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
         padding: 0.5rem 1rem;
@@ -126,14 +85,7 @@ st.markdown("""
         transform: translateY(-5px);
     }
     
-    /* Streamlit metric styling */
-    [data-testid="stMetricValue"],
-    [data-testid="stMetricLabel"],
-    [data-testid="stMetricDelta"] {
-        color: #1a1a2e !important;
-    }
-    
-    /* Section headers */
+    /* Section headers - gradient text */
     .section-header {
         background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
         -webkit-background-clip: text;
@@ -150,23 +102,6 @@ st.markdown("""
         padding: 1rem;
         border-radius: 0 8px 8px 0;
         margin: 1rem 0;
-    }
-    
-    .info-box, .info-box p, .info-box span {
-        color: #1a1a2e !important;
-    }
-    
-    /* Streamlit info/success/warning/error boxes */
-    .stAlert, .stAlert p, .stAlert span, .stAlert div {
-        color: #1a1a2e !important;
-    }
-    
-    /* Sidebar styling */
-    [data-testid="stSidebar"],
-    [data-testid="stSidebar"] p,
-    [data-testid="stSidebar"] span,
-    [data-testid="stSidebar"] label,
-    [data-testid="stSidebar"] div {
         color: #1a1a2e !important;
     }
     
@@ -174,7 +109,7 @@ st.markdown("""
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
     
-    /* Button styling */
+    /* Button styling - white text on gradient */
     .stButton > button {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white !important;
@@ -193,7 +128,7 @@ st.markdown("""
         color: white !important;
     }
     
-    /* Tab styling - FIXED */
+    /* Tab styling */
     .stTabs [data-baseweb="tab-list"] {
         gap: 8px;
         background-color: transparent;
@@ -208,17 +143,14 @@ st.markdown("""
         font-weight: 500;
     }
     
-    .stTabs [data-baseweb="tab"] span {
-        color: #1a1a2e !important;
-    }
-    
     /* Selected tab - white text on gradient */
     .stTabs [aria-selected="true"] {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white !important;
     }
     
-    .stTabs [aria-selected="true"] span {
+    .stTabs [aria-selected="true"] span,
+    .stTabs [aria-selected="true"] p {
         color: white !important;
     }
     
@@ -245,28 +177,6 @@ st.markdown("""
     .status-error {
         color: #e74c3c !important;
         font-weight: 600;
-    }
-    
-    /* Input fields and labels */
-    .stSelectbox label,
-    .stSlider label,
-    .stNumberInput label,
-    .stTextInput label,
-    .stRadio label,
-    .stCheckbox label {
-        color: #1a1a2e !important;
-    }
-    
-    /* Expander and caption text */
-    .streamlit-expanderHeader,
-    .stCaption,
-    figcaption {
-        color: #1a1a2e !important;
-    }
-    
-    /* DataFrame/Table text */
-    .stDataFrame, .stTable {
-        color: #1a1a2e !important;
     }
     
     /* Download button text */
