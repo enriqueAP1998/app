@@ -42,13 +42,46 @@ st.markdown("""
         padding-bottom: 2rem;
     }
     
-    /* Header styling */
+    /* GLOBAL TEXT FIX - Ensure all text is dark on light backgrounds */
+    .main .block-container, 
+    .main .block-container p,
+    .main .block-container span,
+    .main .block-container div,
+    .main .block-container label,
+    .stMarkdown,
+    .stMarkdown p,
+    .stMarkdown span,
+    .stText,
+    [data-testid="stMarkdownContainer"],
+    [data-testid="stMarkdownContainer"] p,
+    [data-testid="stMarkdownContainer"] span,
+    [data-testid="stText"] {
+        color: #1a1a2e !important;
+    }
+    
+    /* Tab content area - ensure dark text */
+    .stTabs [data-baseweb="tab-panel"],
+    .stTabs [data-baseweb="tab-panel"] p,
+    .stTabs [data-baseweb="tab-panel"] span,
+    .stTabs [data-baseweb="tab-panel"] div,
+    .stTabs [data-baseweb="tab-panel"] h1,
+    .stTabs [data-baseweb="tab-panel"] h2,
+    .stTabs [data-baseweb="tab-panel"] h3,
+    .stTabs [data-baseweb="tab-panel"] h4 {
+        color: #1a1a2e !important;
+    }
+    
+    /* Headers inside tabs */
+    h1, h2, h3, h4, h5, h6 {
+        color: #1a1a2e !important;
+    }
+    
+    /* Header styling - EXCEPTION: white text on gradient */
     .main-header {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         padding: 1.5rem;
         border-radius: 15px;
         margin-bottom: 1.5rem;
-        color: white;
         text-align: center;
         box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
     }
@@ -87,11 +120,17 @@ st.markdown("""
         text-align: center;
         box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         transition: transform 0.3s ease;
-        color: #333 !important;
     }
     
     .metric-card:hover {
         transform: translateY(-5px);
+    }
+    
+    /* Streamlit metric styling */
+    [data-testid="stMetricValue"],
+    [data-testid="stMetricLabel"],
+    [data-testid="stMetricDelta"] {
+        color: #1a1a2e !important;
     }
     
     /* Section headers */
@@ -104,29 +143,31 @@ st.markdown("""
         margin: 1.5rem 0 1rem 0;
     }
     
-    /* Info boxes */
+    /* Info boxes with dark text */
     .info-box {
         background: #e8f4f8;
         border-left: 4px solid #667eea;
         padding: 1rem;
         border-radius: 0 8px 8px 0;
         margin: 1rem 0;
-        color: #333 !important;
     }
     
-    /* Ensure dark text on light backgrounds */
-    .stMarkdown, .stText {
-        color: #333 !important;
+    .info-box, .info-box p, .info-box span {
+        color: #1a1a2e !important;
     }
     
-    /* Fix sidebar text visibility */
-    .css-1d391kg, .css-1lcbmhc {
-        color: #333 !important;
+    /* Streamlit info/success/warning/error boxes */
+    .stAlert, .stAlert p, .stAlert span, .stAlert div {
+        color: #1a1a2e !important;
     }
     
-    /* Streamlit info/success/warning boxes text */
-    .stAlert {
-        color: #333 !important;
+    /* Sidebar styling */
+    [data-testid="stSidebar"],
+    [data-testid="stSidebar"] p,
+    [data-testid="stSidebar"] span,
+    [data-testid="stSidebar"] label,
+    [data-testid="stSidebar"] div {
+        color: #1a1a2e !important;
     }
     
     /* Hide Streamlit branding */
@@ -136,7 +177,7 @@ st.markdown("""
     /* Button styling */
     .stButton > button {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
+        color: white !important;
         border: none;
         padding: 0.75rem 2rem;
         font-size: 1.1rem;
@@ -149,21 +190,36 @@ st.markdown("""
     .stButton > button:hover {
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+        color: white !important;
     }
     
-    /* Tab styling */
+    /* Tab styling - FIXED */
     .stTabs [data-baseweb="tab-list"] {
         gap: 8px;
+        background-color: transparent;
     }
     
+    /* Unselected tabs - dark text on light background */
     .stTabs [data-baseweb="tab"] {
-        background-color: #f0f2f6;
+        background-color: #e8e8e8;
         border-radius: 8px 8px 0 0;
         padding: 10px 20px;
+        color: #1a1a2e !important;
+        font-weight: 500;
     }
     
+    .stTabs [data-baseweb="tab"] span {
+        color: #1a1a2e !important;
+    }
+    
+    /* Selected tab - white text on gradient */
     .stTabs [aria-selected="true"] {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white !important;
+    }
+    
+    .stTabs [aria-selected="true"] span {
+        color: white !important;
     }
     
     /* Location picker card */
@@ -177,18 +233,45 @@ st.markdown("""
     
     /* Status indicators */
     .status-loading {
-        color: #f39c12;
+        color: #f39c12 !important;
         font-weight: 600;
     }
     
     .status-success {
-        color: #27ae60;
+        color: #27ae60 !important;
         font-weight: 600;
     }
     
     .status-error {
-        color: #e74c3c;
+        color: #e74c3c !important;
         font-weight: 600;
+    }
+    
+    /* Input fields and labels */
+    .stSelectbox label,
+    .stSlider label,
+    .stNumberInput label,
+    .stTextInput label,
+    .stRadio label,
+    .stCheckbox label {
+        color: #1a1a2e !important;
+    }
+    
+    /* Expander and caption text */
+    .streamlit-expanderHeader,
+    .stCaption,
+    figcaption {
+        color: #1a1a2e !important;
+    }
+    
+    /* DataFrame/Table text */
+    .stDataFrame, .stTable {
+        color: #1a1a2e !important;
+    }
+    
+    /* Download button text */
+    .stDownloadButton > button {
+        color: white !important;
     }
 </style>
 """, unsafe_allow_html=True)
