@@ -1054,13 +1054,13 @@ def main():
             
             st.markdown(f"""
             <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); 
-                        padding: 1rem; border-radius: 10px; margin-bottom: 1rem;">
-                <p><strong>📍 Location:</strong> {selected_preset}</p>
-                <p><strong>🎯 Radius:</strong> {radius_km} km</p>
-                <p><strong>⏱️ Taxi Time:</strong> {taxi_time} min</p>
-                <p><strong>📊 Simulations:</strong> {n_simulations:,}</p>
-                <p><strong>🛬 Platforms:</strong> 1-{max_platforms}</p>
-                <p><strong>🅿️ Parkings:</strong> 1-{max_parkings}</p>
+                        padding: 1rem; border-radius: 10px; margin-bottom: 1rem; color: #000000;">
+                <p style="color: #000000;"><strong>📍 Location:</strong> {selected_preset}</p>
+                <p style="color: #000000;"><strong>🎯 Radius:</strong> {radius_km} km</p>
+                <p style="color: #000000;"><strong>⏱️ Taxi Time:</strong> {taxi_time} min</p>
+                <p style="color: #000000;"><strong>📊 Simulations:</strong> {n_simulations:,}</p>
+                <p style="color: #000000;"><strong>🛬 Platforms:</strong> 1-{max_platforms}</p>
+                <p style="color: #000000;"><strong>🅿️ Parkings:</strong> 1-{max_parkings}</p>
             </div>
             """, unsafe_allow_html=True)
             
