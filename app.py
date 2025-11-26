@@ -57,12 +57,14 @@ st.markdown("""
         margin: 0;
         font-size: 2.2rem;
         font-weight: 700;
+        color: white !important;
     }
     
     .main-header p {
         margin: 0.5rem 0 0 0;
-        opacity: 0.9;
+        opacity: 0.95;
         font-size: 1rem;
+        color: white !important;
     }
     
     /* Data source badge */
@@ -73,6 +75,8 @@ st.markdown("""
         display: inline-block;
         font-size: 0.85rem;
         margin-top: 0.5rem;
+        color: white !important;
+        font-weight: 500;
     }
     
     /* Metric cards */
@@ -83,6 +87,7 @@ st.markdown("""
         text-align: center;
         box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         transition: transform 0.3s ease;
+        color: #333 !important;
     }
     
     .metric-card:hover {
@@ -106,6 +111,22 @@ st.markdown("""
         padding: 1rem;
         border-radius: 0 8px 8px 0;
         margin: 1rem 0;
+        color: #333 !important;
+    }
+    
+    /* Ensure dark text on light backgrounds */
+    .stMarkdown, .stText {
+        color: #333 !important;
+    }
+    
+    /* Fix sidebar text visibility */
+    .css-1d391kg, .css-1lcbmhc {
+        color: #333 !important;
+    }
+    
+    /* Streamlit info/success/warning boxes text */
+    .stAlert {
+        color: #333 !important;
     }
     
     /* Hide Streamlit branding */
@@ -1359,29 +1380,31 @@ def main():
             st.plotly_chart(fig, use_container_width=True)
             st.caption("*This is demo data. Run a simulation to see actual results.*")
     
-    # Footer with author info
+    # Footer with credits
     st.markdown("---")
     
     st.markdown("""
-    <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); 
+    <div style="background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%); 
                 padding: 1.5rem; border-radius: 12px; margin-top: 1rem;">
         <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 20px;">
             <div style="text-align: center;">
-                <p style="margin: 0; font-size: 1rem; color: #333; font-weight: 600;">
-                    👨‍💻 Developed by <strong>Enrique Aldao Pensado</strong>
+                <p style="margin: 0; font-size: 1.1rem; color: #fff; font-weight: 600;">
+                    🚁 <strong>DICUAM UAM Open Source Model G3</strong>
                 </p>
-                <p style="margin: 0.3rem 0 0 0; font-size: 0.9rem; color: #666;">
-                    PhD Researcher | University of Vigo
+                <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem; color: #ecf0f1;">
+                    <a href="https://www.dicuam2026.org/common-uam-model" target="_blank" 
+                       style="color: #3498db; background: #fff; padding: 0.3rem 0.8rem; border-radius: 15px; text-decoration: none; font-weight: 500;">
+                        🔗 Learn More About the Project
+                    </a>
                 </p>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #ddd;">
-            <p style="margin: 0; font-size: 0.85rem; color: #888;">
-                🚁 UAM Vertiport Simulator | Powered by GHS-POP Population Model | 
-                <a href="https://www.uvigo.gal" target="_blank" style="color: #667eea;">University of Vigo</a>
+        <div style="text-align: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.3);">
+            <p style="margin: 0; font-size: 0.85rem; color: #ecf0f1;">
+                🚁 UAM Vertiport Simulator | Powered by GHS-POP Population Model
             </p>
-            <p style="margin: 0.3rem 0 0 0; font-size: 0.8rem; color: #aaa;">
-                © 2025 All rights reserved
+            <p style="margin: 0.3rem 0 0 0; font-size: 0.8rem; color: #bdc3c7;">
+                © 2025 DICUAM Consortium | Open Source
             </p>
         </div>
     </div>
